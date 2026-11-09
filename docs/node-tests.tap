@@ -1,0 +1,268 @@
+TAP version 13
+# Subtest: help and version use JSON protocol
+ok 1 - help and version use JSON protocol
+  ---
+  duration_ms: 974.363278
+  type: 'test'
+  ...
+# Subtest: unknown commands, flags, duplicates and unexpected arguments fail
+ok 2 - unknown commands, flags, duplicates and unexpected arguments fail
+  ---
+  duration_ms: 967.478911
+  type: 'test'
+  ...
+# Subtest: init creates an editable app and refuses an existing destination
+ok 3 - init creates an editable app and refuses an existing destination
+  ---
+  duration_ms: 11.607966
+  type: 'test'
+  ...
+# Subtest: generated projects retain the complete scoped MIT notice
+ok 4 - generated projects retain the complete scoped MIT notice
+  ---
+  duration_ms: 15.624183
+  type: 'test'
+  ...
+# Subtest: validating, planning, sampling and QA planning use explicit coverage
+ok 5 - validating, planning, sampling and QA planning use explicit coverage
+  ---
+  duration_ms: 1222.151976
+  type: 'test'
+  ...
+# Subtest: malformed JSON and schema violations produce nonzero structured errors
+ok 6 - malformed JSON and schema violations produce nonzero structured errors
+  ---
+  duration_ms: 230.472442
+  type: 'test'
+  ...
+# Subtest: invalid UTF-8 input is rejected instead of silently changing text
+ok 7 - invalid UTF-8 input is rejected instead of silently changing text
+  ---
+  duration_ms: 113.554409
+  type: 'test'
+  ...
+# Subtest: generation is byte-deterministic and leaves custom code untouched
+ok 8 - generation is byte-deterministic and leaves custom code untouched
+  ---
+  duration_ms: 9.169922
+  type: 'test'
+  ...
+# Subtest: modified generated files block all writes before commit
+ok 9 - modified generated files block all writes before commit
+  ---
+  duration_ms: 137.115596
+  type: 'test'
+  ...
+# Subtest: dry-run reports changes without writing or taking a lock
+ok 10 - dry-run reports changes without writing or taking a lock
+  ---
+  duration_ms: 6.996978
+  type: 'test'
+  ...
+# Subtest: concurrent writers are rejected and the lock is cleaned
+ok 11 - concurrent writers are rejected and the lock is cleaned
+  ---
+  duration_ms: 5.157296
+  type: 'test'
+  ...
+# Subtest: symlinked outputs and forged generated directories cannot redirect writes
+ok 12 - symlinked outputs and forged generated directories cannot redirect writes
+  ---
+  duration_ms: 4.413931
+  type: 'test'
+  ...
+# Subtest: Dart data encoding cannot interpolate or close a string literal
+ok 13 - Dart data encoding cannot interpolate or close a string literal
+  ---
+  duration_ms: 1.485554
+  type: 'test'
+  ...
+# Subtest: QA trusts exit status, not text that claims success
+ok 14 - QA trusts exit status, not text that claims success
+  ---
+  duration_ms: 0.86625
+  type: 'test'
+  ...
+# Subtest: missing Flutter reports blocked and later checks never run
+ok 15 - missing Flutter reports blocked and later checks never run
+  ---
+  duration_ms: 0.382816
+  type: 'test'
+  ...
+# Subtest: successful machine checks never claim visual, interaction or device QA
+ok 16 - successful machine checks never claim visual, interaction or device QA
+  ---
+  duration_ms: 0.79928
+  type: 'test'
+  ...
+# Subtest: QA matrix records source identity and interruption cases
+ok 17 - QA matrix records source identity and interruption cases
+  ---
+  duration_ms: 0.304174
+  type: 'test'
+  ...
+# Subtest: QA rejects stale generated code before invoking Flutter
+ok 18 - QA rejects stale generated code before invoking Flutter
+  ---
+  duration_ms: 204.498264
+  type: 'test'
+  ...
+# Subtest: scene inputs reject symlink files and symlink parent directories
+ok 19 - scene inputs reject symlink files and symlink parent directories
+  ---
+  duration_ms: 273.051643
+  type: 'test'
+  ...
+# Subtest: bundled schema uses only supported evaluator keywords
+ok 20 - bundled schema uses only supported evaluator keywords
+  ---
+  duration_ms: 2.991499
+  type: 'test'
+  ...
+# Subtest: seed contract validates and declares no artwork
+ok 21 - seed contract validates and declares no artwork
+  ---
+  duration_ms: 4.935162
+  type: 'test'
+  ...
+# Subtest: rejects unknown field
+ok 22 - rejects unknown field
+  ---
+  duration_ms: 0.587187
+  type: 'test'
+  ...
+# Subtest: rejects schema version
+ok 23 - rejects schema version
+  ---
+  duration_ms: 1.467396
+  type: 'test'
+  ...
+# Subtest: rejects duplicate layer
+ok 24 - rejects duplicate layer
+  ---
+  duration_ms: 0.858478
+  type: 'test'
+  ...
+# Subtest: rejects interval
+ok 25 - rejects interval
+  ---
+  duration_ms: 0.671697
+  type: 'test'
+  ...
+# Subtest: rejects nonfinite number
+ok 26 - rejects nonfinite number
+  ---
+  duration_ms: 0.556514
+  type: 'test'
+  ...
+# Subtest: rejects wrong layer type
+ok 27 - rejects wrong layer type
+  ---
+  duration_ms: 0.894967
+  type: 'test'
+  ...
+# Subtest: rejects missing image asset
+ok 28 - rejects missing image asset
+  ---
+  duration_ms: 0.85896
+  type: 'test'
+  ...
+# Subtest: rejects reference on shape
+ok 29 - rejects reference on shape
+  ---
+  duration_ms: 1.112865
+  type: 'test'
+  ...
+# Subtest: rejects off canvas
+ok 30 - rejects off canvas
+  ---
+  duration_ms: 0.817418
+  type: 'test'
+  ...
+# Subtest: rejects zero width
+ok 31 - rejects zero width
+  ---
+  duration_ms: 0.580572
+  type: 'test'
+  ...
+# Subtest: rejects anchor range
+ok 32 - rejects anchor range
+  ---
+  duration_ms: 0.501382
+  type: 'test'
+  ...
+# Subtest: Unicode labels remain ordinary data
+ok 33 - Unicode labels remain ordinary data
+  ---
+  duration_ms: 0.749235
+  type: 'test'
+  ...
+# Subtest: asset header, hash and dimensions are checked
+ok 34 - asset header, hash and dimensions are checked
+  ---
+  duration_ms: 7.605388
+  type: 'test'
+  ...
+# Subtest: image header checks do not claim to decode images
+ok 35 - image header checks do not claim to decode images
+  ---
+  duration_ms: 0.964793
+  type: 'test'
+  ...
+# Subtest: asset rights are warnings locally and release blockers
+ok 36 - asset rights are warnings locally and release blockers
+  ---
+  duration_ms: 1.964468
+  type: 'test'
+  ...
+# Subtest: missing, mismatched-format and corrupt image files fail clearly
+ok 37 - missing, mismatched-format and corrupt image files fail clearly
+  ---
+  duration_ms: 1.832834
+  type: 'test'
+  ...
+# Subtest: path traversal, absolute paths and symlinks are blocked
+ok 38 - path traversal, absolute paths and symlinks are blocked
+  ---
+  duration_ms: 1.544882
+  type: 'test'
+  ...
+# Subtest: schema-valid lexical traversal is rejected without reading files
+ok 39 - schema-valid lexical traversal is rejected without reading files
+  ---
+  duration_ms: 1.167396
+  type: 'test'
+  ...
+# Subtest: image parser supports PNG, WebP extended, lossless and lossy headers
+ok 40 - image parser supports PNG, WebP extended, lossless and lossy headers
+  ---
+  duration_ms: 1.279363
+  type: 'test'
+  ...
+# Subtest: entry endpoints settle exactly and are stateless under seeking
+ok 41 - entry endpoints settle exactly and are stateless under seeking
+  ---
+  duration_ms: 0.683938
+  type: 'test'
+  ...
+# Subtest: pointer and scroll are separate and reduced motion overrides all transforms
+ok 42 - pointer and scroll are separate and reduced motion overrides all transforms
+  ---
+  duration_ms: 0.21986
+  type: 'test'
+  ...
+# Subtest: all 101 samples stay within finite opacity and positive scale
+ok 43 - all 101 samples stay within finite opacity and positive scale
+  ---
+  duration_ms: 1.374225
+  type: 'test'
+  ...
+1..43
+# tests 43
+# suites 0
+# pass 43
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4493.980999

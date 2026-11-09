@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:flutter-scene-tool:scene:1",
+  "title": "Editable Flutter Scene v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "label", "canvas", "motion", "assets", "layers"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "id": { "$ref": "#/$defs/id" },
+    "label": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "canvas": {
+      "type": "object", "additionalProperties": false,
+      "required": ["width", "height", "fit", "background", "focalPoint"],
+      "properties": {
+        "width": { "type": "integer", "minimum": 64, "maximum": 8192 },
+        "height": { "type": "integer", "minimum": 64, "maximum": 8192 },
+        "fit": { "enum": ["contain", "cover"] },
+        "background": { "$ref": "#/$defs/color" },
+        "focalPoint": { "$ref": "#/$defs/point" }
+      }
+    },
+    "motion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["durationMs", "reducedMotion"],
+      "properties": {
+        "durationMs": { "type": "integer", "minimum": 1, "maximum": 10000 },
+        "reducedMotion": { "const": "settle" }
+      }
+    },
+    "assets": {
+      "type": "array", "maxItems": 128,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "path", "sha256", "width", "height", "license", "source", "redistribution"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "path": { "type": "string", "pattern": "^assets/[A-Za-z0-9_./-]+\\.(png|webp|jpg|jpeg)$", "maxLength": 240 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "width": { "type": "integer", "minimum": 1, "maximum": 8192 },
+          "height": { "type": "integer", "minimum": 1, "maximum": 8192 },
+          "license": { "type": "string", "minLength": 1, "maxLength": 200 },
+          "source": { "type": "string", "minLength": 1, "maxLength": 1000 },
+          "redistribution": { "enum": ["approved", "unverified", "restricted"] }
+        }
+      }
+    },
+    "layers": {
+      "type": "array", "minItems": 1, "maxItems": 64,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "role", "kind", "bounds", "anchor", "color", "entry", "depth", "semantics"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "role": { "enum": ["background", "landmark", "foreground", "foliage", "actor", "detail"] },
+          "kind": { "enum": ["rectangle", "ellipse", "image"] },
+          "asset": { "$ref": "#/$defs/id" },
+          "bounds": {
+            "type": "array", "minItems": 4, "maxItems": 4,
+            "prefixItems": [
+              { "type": "number", "minimum": -2, "maximum": 2 },
+              { "type": "number", "minimum": -2, "maximum": 2 },
+              { "type": "number", "exclusiveMinimum": 0, "maximum": 4 },
+              { "type": "number", "exclusiveMinimum": 0, "maximum": 4 }
+            ]
+          },
+          "anchor": { "$ref": "#/$defs/point" },
+          "color": { "$ref": "#/$defs/color" },
+          "entry": {
+            "type": "object", "additionalProperties": false,
+            "required": ["start", "end", "offset", "scale", "opacity"],
+            "properties": {
+              "start": { "$ref": "#/$defs/unit" },
+              "end": { "$ref": "#/$defs/unit" },
+              "offset": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "number", "minimum": -1, "maximum": 1 } },
+              "scale": { "type": "number", "exclusiveMinimum": 0, "maximum": 3 },
+              "opacity": { "$ref": "#/$defs/unit" }
+            }
+          },
+          "depth": {
+            "type": "object", "additionalProperties": false,
+            "required": ["pointer", "scrollScale"],
+            "properties": {
+              "pointer": { "type": "number", "minimum": 0, "maximum": 0.1 },
+              "scrollScale": { "type": "number", "minimum": 0, "maximum": 0.5 }
+            }
+          },
+          "semantics": { "type": "string", "maxLength": 240 }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9_]{0,63}$" },
+    "color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+    "unit": { "type": "number", "minimum": 0, "maximum": 1 },
+    "point": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "$ref": "#/$defs/unit" } }
+  }
+}

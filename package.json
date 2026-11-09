@@ -1,0 +1,26 @@
+{
+  "name": "flutter-scene-tool",
+  "version": "0.1.0-dev.1",
+  "description": "Deterministic, agent-oriented authoring contracts for editable Flutter scenes",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "scene-tool": "bin/scene-tool.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check bin/scene-tool.mjs && node --test"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Malko-opensource/flutter-scene-tool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Malko-opensource/flutter-scene-tool/issues"
+  },
+  "homepage": "https://github.com/Malko-opensource/flutter-scene-tool#readme"
+}

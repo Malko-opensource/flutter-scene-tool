@@ -1,0 +1,119 @@
+{
+  "date": "2026-11-09",
+  "browser": {
+    "name": "Chrome",
+    "version": "not_recorded",
+    "host": "macOS",
+    "dpr": 1
+  },
+  "sceneHash": "4625c63dcc3caea8f81f2d8f6a2c1ddf42920b5a6df0e70143fddc58b325069b",
+  "entrypoints": {
+    "production": "lib/main.dart",
+    "harness": "lib/generated/qa_main.dart"
+  },
+  "viewports": [
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 844,
+      "height": 390
+    },
+    {
+      "width": 1440,
+      "height": 900
+    }
+  ],
+  "checks": [
+    {
+      "id": "production_viewports",
+      "status": "passed",
+      "observed": "Actual production title/sun contained at all three sizes; no uncovered borders observed"
+    },
+    {
+      "id": "harness_fixed_frames",
+      "status": "passed",
+      "progress": [
+        0,
+        0.25,
+        0.5,
+        0.75,
+        1
+      ],
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "input": "Real slider drag/click",
+      "observed": "Opaque base at start; expected translucent overlap during entry; settled scene at end"
+    },
+    {
+      "id": "reduced_override",
+      "status": "passed",
+      "input": "Real checkbox at manual 40%",
+      "observed": "Settled geometry matched endpoint"
+    },
+    {
+      "id": "repeat_replay",
+      "status": "passed",
+      "repetitions": 2,
+      "input": "Real Replay control"
+    },
+    {
+      "id": "latest_target",
+      "status": "passed",
+      "input": "1000ms injected readiness delay and rapid A to B to C buttons",
+      "observed": "A remained while C was pending, then C semantics and pink pixels appeared"
+    },
+    {
+      "id": "failure_retry",
+      "status": "passed",
+      "input": "Injected readiness failure followed by real Retry click",
+      "observed": "Prior A scene retained while B failed, then B committed on retry"
+    },
+    {
+      "id": "console",
+      "status": "passed",
+      "observed": "No warning/error entries in checked flows"
+    },
+    {
+      "id": "runtime_resources",
+      "status": "observed_localhost_only",
+      "observed": "Bootstrap, CanvasKit wasm/js, main.dart.js, font manifest, MaterialIcons and fallback Roboto loaded from localhost"
+    },
+    {
+      "id": "inspector_label_overlap",
+      "status": "passed",
+      "change": "Disable floating value indicator while retaining static percentage and accessible slider value",
+      "observed": "Final real drag from 100 to 0 left the Frame progress label readable with no floating-bubble overlap; no console warning/error entries"
+    }
+  ],
+  "independentReview": {
+    "status": "completed_with_narrow_polish_reprobe",
+    "observed": [
+      "Sun containment and scene coverage across all three sizes",
+      "Reduced40 frame corresponds to settled frame",
+      "Intentional curved/translucent overlap at intermediate frames",
+      "Landscape foreground is a thin strip",
+      "Portrait crops the rear hill peak under cover framing",
+      "Slider bubble/label overlap fixed and final 0% drag reprobed"
+    ]
+  },
+  "evidence": {
+    "screenshots": "Retained locally in the disposable verification workspace; not included as deliverables",
+    "continuousVideo": "not_recorded",
+    "frameGapAnalysis": "not_run",
+    "fixedFrameCoverageOnly": true
+  },
+  "limits": [
+    "No full-motion smoothness or performance certification",
+    "No native-device performance or complete accessibility audit",
+    "Injected harness failures/delays are not real backend/network conditions",
+    "Production app routing/gestures/business workflows are not implemented by this fixture",
+    "Browser platform-media preference not separately emulated; explicit override plus Flutter platform tests only",
+    "Other DPRs/devices and full live replay intervals were not exhaustively observed"
+  ],
+  "releaseReady": false,
+  "cleanup": "Owned servers stopped; viewport reset; test tabs closed; evidence retained locally"
+}

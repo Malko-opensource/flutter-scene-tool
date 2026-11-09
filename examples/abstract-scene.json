@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "id": "quiet_landscape",
+  "label": "An abstract layered landscape",
+  "canvas": {
+    "width": 1200,
+    "height": 900,
+    "fit": "cover",
+    "background": "#e9dfca",
+    "focalPoint": [
+      0.7,
+      0.15
+    ]
+  },
+  "motion": {
+    "durationMs": 1400,
+    "reducedMotion": "settle"
+  },
+  "assets": [],
+  "layers": [
+    {
+      "id": "sky",
+      "role": "background",
+      "kind": "rectangle",
+      "bounds": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "color": "#e9dfca",
+      "entry": {
+        "start": 0,
+        "end": 0.3,
+        "offset": [
+          0,
+          0
+        ],
+        "scale": 1,
+        "opacity": 1
+      },
+      "depth": {
+        "pointer": 0,
+        "scrollScale": 0
+      },
+      "semantics": ""
+    },
+    {
+      "id": "sun",
+      "role": "detail",
+      "kind": "ellipse",
+      "bounds": [
+        0.65,
+        0.12,
+        0.14,
+        0.19
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "color": "#dd8959",
+      "entry": {
+        "start": 0.05,
+        "end": 0.6,
+        "offset": [
+          0,
+          0.06
+        ],
+        "scale": 0.95,
+        "opacity": 0
+      },
+      "depth": {
+        "pointer": 0.005,
+        "scrollScale": 0
+      },
+      "semantics": ""
+    },
+    {
+      "id": "far_hill",
+      "role": "landmark",
+      "kind": "ellipse",
+      "bounds": [
+        -0.2,
+        0.5,
+        1.1,
+        1.1
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "color": "#677e72",
+      "entry": {
+        "start": 0.12,
+        "end": 0.7,
+        "offset": [
+          0,
+          0.12
+        ],
+        "scale": 0.98,
+        "opacity": 0
+      },
+      "depth": {
+        "pointer": 0.01,
+        "scrollScale": 0
+      },
+      "semantics": ""
+    },
+    {
+      "id": "near_hill",
+      "role": "foreground",
+      "kind": "ellipse",
+      "bounds": [
+        0.35,
+        0.65,
+        1,
+        0.8
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "color": "#384f4e",
+      "entry": {
+        "start": 0.35,
+        "end": 0.9,
+        "offset": [
+          -0.03,
+          0.1
+        ],
+        "scale": 1.02,
+        "opacity": 0
+      },
+      "depth": {
+        "pointer": 0.018,
+        "scrollScale": 0
+      },
+      "semantics": ""
+    }
+  ]
+}

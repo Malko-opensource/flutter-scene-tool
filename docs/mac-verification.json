@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-09",
+  "execution": "Actual commands in disposable macOS projects; existing Flutter SDK and cached packages; official web artifacts acquired after user authorization",
+  "versions": {
+    "flutter": "3.47.9",
+    "dart": "3.13.7",
+    "node": "v26.11.1"
+  },
+  "sourceBasis": {
+    "archiveSha256": "4484be2a589de4eb7719fc00f2f672e3451c81421bc06030961f05a261096089",
+    "patches": [
+      "Scene focalPoint [0.7,0.15]",
+      "QA SliderTheme disables redundant floating value indicator"
+    ],
+    "identity": "Final generated-file hashes are independently matched on the Mac; documentation/CLI flag changes do not alter those Flutter files"
+  },
+  "commands": [
+    {
+      "command": "flutter precache --web --no-ios --no-linux --no-windows --no-macos --no-fuchsia",
+      "exitCode": 0,
+      "downloadObserved": "Web SDK only"
+    },
+    {
+      "command": "flutter pub get --offline",
+      "exitCode": 0,
+      "cachedDependencies": 24
+    },
+    {
+      "command": "flutter analyze --no-pub",
+      "exitCode": 0,
+      "result": "No issues found"
+    },
+    {
+      "command": "flutter test --no-pub --reporter expanded",
+      "exitCode": 0,
+      "passed": 12
+    },
+    {
+      "command": "flutter build web --release --no-pub --no-web-resources-cdn",
+      "exitCode": 0
+    },
+    {
+      "command": "flutter build web --release --no-pub --no-web-resources-cdn --target lib/generated/qa_main.dart --output build/qa-web",
+      "exitCode": 0
+    },
+    {
+      "command": "node --test tests/*.test.mjs on Mac default TMPDIR",
+      "exitCode": 0,
+      "passed": 42
+    }
+  ],
+  "warnings": [
+    "Builds reported expected CupertinoIcons font family without that optional package; no missing fixture glyph observed"
+  ],
+  "coverage": {
+    "flutterAnalysis": "passed",
+    "flutterWidgetAndParityTests": "passed",
+    "defaultWebBuild": "passed",
+    "harnessWebBuild": "passed",
+    "browserInteraction": "see browser-verification.json",
+    "devicePerformance": "not_run",
+    "accessibilityAudit": "not_run"
+  },
+  "sceneHash": "4625c63dcc3caea8f81f2d8f6a2c1ddf42920b5a6df0e70143fddc58b325069b",
+  "generatedFileSha256": {
+    "lib/generated/scene_data.dart": "13bbd07a49a9d8b83be432a6cbc9a403c355ead7bbe6fcb58344f55833241f86",
+    "lib/generated/scene_runtime.dart": "af5232efab894ea7cf07d15df7eb659ea45b5866209c4f7a1865ee6e0ff5039a",
+    "lib/generated/qa_main.dart": "5901fb8a64b612bcd57b71847dbf81430e9c90c0fbd32d3433954d043824d445",
+    "test/generated_scene_contract_test.dart": "c08c735eac7cb61f20a1a38de82f626feb373ebd7a19ab937649b9ce1d8034f5",
+    "test/fixtures/scene_motion_samples.json": "7333e1ba84516d6e32107d440e8750c01bcf543c15f1790a17c050a6deccf871",
+    ".scene-tool/assets.json": "468448cc1946032c9715ccb3c4af38dd9ae161392b1d7d3eccace004982a2f61"
+  },
+  "releaseReady": false,
+  "buildSha256": {
+    "productionMainJs": "617e77703296546f9bfe58ad58836763fe76178c62d1af15d68edaad55abfb99",
+    "harnessMainJs": "ec414f2318740d2c5b11f06c06b1159eac886380e1b4006fdf5edd5f0c3982fe"
+  },
+  "cleanup": "Owned localhost servers stopped; test tabs closed; viewport reset; user projects unchanged"
+}
